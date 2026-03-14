@@ -104,11 +104,11 @@ export function WhatMarketerHandles() {
                             marginBottom: "14px",
                         }}
                     >
-                        What{" "}
+                        What Your{" "}
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#71389A] to-[#CB84FF]">
-                            DIY Marketing
+                            Marketing Manager
                         </span>{" "}
-                        Plan Includes
+                        Handles
                     </h2>
                     <p
                         style={{
@@ -120,7 +120,7 @@ export function WhatMarketerHandles() {
                             margin: "0 auto",
                         }}
                     >
-                        Everything you need to plan your marketing strategy and execute clearly.
+                        Your manager owns planning, execution, tracking, and optimization across channels.
                     </p>
                 </motion.div>
 
@@ -193,7 +193,7 @@ export function WhatMarketerHandles() {
                             scrollbarWidth: "none",
                             msOverflowStyle: "none",
                         }}
-                        className="[&::-webkit-scrollbar]:hidden pr-[10%]"
+                        className="[&::-webkit-scrollbar]:hidden pr-12 md:pr-24"
                     >
                         {includedItems.map((item, i) => (
                             <motion.div
@@ -257,33 +257,17 @@ export function WhatMarketerHandles() {
                         ))}
                     </div>
 
-                    {/* Right fade + blur overlay — peek effect */}
-                    <div
-                        style={{
-                            position: "absolute",
-                            top: 0,
-                            right: 0, // Changed from -50vw to 0 to prevent overflow since section is now overflow-hidden
-                            bottom: "32px",
-                            width: "50vw",
-                            pointerEvents: "none",
-                            background: "linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)",
-                            zIndex: 1,
-                        }}
-                    />
+                    {/* Right fade overlay — more subtle peek */}
                     <div
                         style={{
                             position: "absolute",
                             top: 0,
                             right: 0,
                             bottom: "32px",
-                            width: "250px",
+                            width: "80px",
                             pointerEvents: "none",
-                            background: "linear-gradient(to left, rgba(255,255,255,0.9) 20%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%)",
-                            backdropFilter: "blur(4px)",
-                            WebkitBackdropFilter: "blur(4px)",
-                            maskImage: "linear-gradient(to left, black 20%, transparent 100%)",
-                            WebkitMaskImage: "linear-gradient(to left, black 20%, transparent 100%)",
-                            zIndex: 2,
+                            background: "linear-gradient(to left, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)",
+                            zIndex: 1,
                         }}
                     />
                 </div>

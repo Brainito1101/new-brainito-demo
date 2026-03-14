@@ -36,50 +36,79 @@ const caseStudies = [
         title: "Launching a Monetized Mindfulness Community with Recurring Revenue",
         image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
     },
+    {
+        category: "Wellness Coach",
+        title: "Launching a Monetized Mindfulness Community with Recurring Revenue",
+        image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+        category: "Wellness Coach",
+        title: "Launching a Monetized Mindfulness Community with Recurring Revenue",
+        image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+        category: "Wellness Coach",
+        title: "Launching a Monetized Mindfulness Community with Recurring Revenue",
+        image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+    },
 ];
 
-export function CaseStudiesSection() {
+interface CaseStudiesSectionProps {
+    hideHeader?: boolean;
+    showViewAll?: boolean;
+    count?: number;
+}
+
+export function CaseStudiesSection({
+    hideHeader = false,
+    showViewAll = true,
+    count
+}: CaseStudiesSectionProps) {
+    const displayStudies = count ? caseStudies.slice(0, count) : caseStudies;
+
     return (
         <section className="py-24 bg-[#FFFFFF]">
             <div className="max-w-[1240px] mx-auto px-6">
-                <div className="text-center mb-16 md:mb-20">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        style={{
-                            fontFamily: "var(--font-poppins), ui-sans-serif",
-                            fontSize: "clamp(36px, 4.5vw, 56px)",
-                            fontWeight: 500,
-                            color: "#101011",
-                            marginBottom: "20px",
-                            letterSpacing: "-1px",
-                            lineHeight: 1.1
-                        }}
-                    >
-                        <span style={{ color: "#71389A" }}>Proven Results</span> Across Industries
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        style={{
-                            fontFamily: "var(--font-poppins), ui-sans-serif",
-                            fontSize: "17px",
-                            color: "#606266",
-                            maxWidth: "600px",
-                            margin: "0 auto",
-                            lineHeight: 1.6
-                        }}
-                    >
-                        Each case study demonstrates structured execution,<br className="hidden md:block" />
-                        consistent tracking, and measurable outcomes.
-                    </motion.p>
-                </div>
+                {!hideHeader && (
+                    <div className="text-center mb-16 md:mb-20">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            style={{
+                                fontFamily: "var(--font-poppins), ui-sans-serif",
+                                fontSize: "clamp(36px, 4.5vw, 56px)",
+                                fontWeight: 500,
+                                color: "#101011",
+                                marginBottom: "20px",
+                                letterSpacing: "-1px",
+                                lineHeight: 1.1
+                            }}
+                        >
+                            <span style={{ color: "#71389A" }}>Proven Results</span> Across Industries
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            style={{
+                                fontFamily: "var(--font-poppins), ui-sans-serif",
+                                fontSize: "17px",
+                                color: "#606266",
+                                maxWidth: "600px",
+                                margin: "0 auto",
+                                lineHeight: 1.6
+                            }}
+                        >
+                            Each case study demonstrates structured execution,<br className="hidden md:block" />
+                            consistent tracking, and measurable outcomes.
+                        </motion.p>
+                    </div>
+                )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {caseStudies.map((study, index) => (
+                    {displayStudies.map((study, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
@@ -172,18 +201,21 @@ export function CaseStudiesSection() {
                 </div>
 
                 {/* View All Case Studies CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="flex justify-center mt-16"
-                >
-                    <ActionButton icon={<ArrowUpRight size={18} />}>
-                        View all case studies
-                    </ActionButton>
-                </motion.div>
+                {showViewAll && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                        className="flex justify-center mt-16"
+                    >
+                        <ActionButton icon={<ArrowUpRight size={18} />}>
+                            View all case studies
+                        </ActionButton>
+                    </motion.div>
+                )}
             </div>
         </section>
     );
 }
+

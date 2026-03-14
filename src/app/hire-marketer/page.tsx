@@ -23,7 +23,7 @@ export default function HireMarketerPage() {
                 <HowItWorksSection2 />
                 <WhatMarketerHandles />
                 <WhyChooseModelSection />
-                <CaseStudiesSection />
+                <CaseStudiesSection count={6} />
                 <HireMarketerPricingSection />
                 <FAQSection />
                 <LetUsGrowSection />
