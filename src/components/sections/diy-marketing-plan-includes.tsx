@@ -74,7 +74,7 @@ export function DIYMarketingPlanIncludesSection() {
     };
 
     return (
-        <section className="py-24 bg-white relative">
+        <section className="py-24 bg-white relative overflow-hidden">
             <Container className="max-w-[1400px]">
 
                 {/* ── Heading (centered) ───────────────────────── */}

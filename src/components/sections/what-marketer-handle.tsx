@@ -84,7 +84,7 @@ export function WhatMarketerHandles() {
     };
 
     return (
-        <section className="py-24 bg-white relative">
+        <section className="py-24 bg-white relative overflow-hidden">
             <Container className="max-w-[1400px]">
 
                 {/* ── Heading (centered) ───────────────────────── */}
@@ -262,7 +262,7 @@ export function WhatMarketerHandles() {
                         style={{
                             position: "absolute",
                             top: 0,
-                            right: "-50vw", // Extend way out to cover extreme large screens
+                            right: 0, // Changed from -50vw to 0 to prevent overflow since section is now overflow-hidden
                             bottom: "32px",
                             width: "50vw",
                             pointerEvents: "none",
